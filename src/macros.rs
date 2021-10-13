@@ -164,7 +164,6 @@ macro_rules! file_format {
             ///
             /// let format = FileFormat::from_file("Cargo.toml")?;
             /// assert_eq!(format, FileFormat::Text);
-            /// # Ok::<(), std::io::Error>(())
             ///```
             pub fn from_file<P: AsRef<Path>>(path: P) -> Result<FileFormat, Error> {
                 Ok(FileFormat::from_bytes(&fs::read(&path)?))
